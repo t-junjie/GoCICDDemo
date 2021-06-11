@@ -48,3 +48,5 @@ jobs: #job to execute on event
         go mod init GoCICDDemo
         go mod tidy
         go test -v
+        go test -v | go2xunit > report.xml # generate xml report of test results
+        ls #confirm report.xml is generated
