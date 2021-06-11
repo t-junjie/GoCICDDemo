@@ -42,3 +42,9 @@ jobs: #job to execute on event
         ls
         cat myText.txt
         cd ..
+        
+    - name: Install dependencies for Go
+      run: |
+        go get github.com/franela/goblin
+        go get github.com/tebeka/go2xunit
+        go test -v
