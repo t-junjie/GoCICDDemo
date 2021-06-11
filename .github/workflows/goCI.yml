@@ -51,3 +51,9 @@ jobs: #job to execute on event
         go test -v
         go test -v | go2xunit > report.xml # generate xml report of test results
         ls #confirm report.xml is generated
+
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1 #checkout unit test reporting
+      if: always() #always do it
+      with:
+        files: report.xml #with the file created in the reporting
