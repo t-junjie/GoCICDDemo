@@ -45,6 +45,6 @@ jobs: #job to execute on event
         
     - name: Install dependencies for Go
       run: |
-        go mod init
+        go mod init GoCICDDemo
         go mod tidy
         go test -v
